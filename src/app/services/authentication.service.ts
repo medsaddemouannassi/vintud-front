@@ -25,17 +25,20 @@ export class AuthenticationService {
     }));
   }
 
-  public register(user): Observable<any> {
-    return this.http.post<any>(`${this.host}/register`, user);
+  public signup(user): Observable<any> {
+    console.log(user);
+    return this.http.post<any>(`${this.host}/signup`, user);
   }
 
   public logOut(): void {
     this.accessToken = null;
     this.refreshToken = null;
     this.loggedInUsername = null;
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    localStorage.removeItem('users');
+    this.roles = null;
+    // localStorage.removeItem('user');
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    // localStorage.removeItem('users');
   }
 
   public saveTokens(accessToken: string, refreshToken: string): void {
