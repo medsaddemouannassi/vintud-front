@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {tap} from 'rxjs/operators';
 
@@ -21,6 +21,7 @@ export class AuthenticationService {
   public login(user): Observable<HttpResponse<any>> {
     return this.http.post<any>(`${this.host}/login`, user, { observe: 'response' }).pipe(tap(res => {
       this.saveTokens(res.body.access_token, res.body.refresh_token);
+      this.isUserLoggedIn();
     }));
   }
 

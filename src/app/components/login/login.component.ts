@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthenticationService} from '../../services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,26 +9,29 @@ import {AuthenticationService} from '../../services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  addLoginForm: FormGroup;
-  user: any = {};
-  accessToken: string;
+  showLoading: any;
+  loginForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
-    this.addLoginForm = this.formBuilder.group({
-      username: [''],
-      password: ['']
+    this.loginForm = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
   login(): void {
-    this.authenticationService.login(this.user).subscribe((data) => {
+    this.showLoading = true;
+    this.authenticationService.login(this.loginForm.value).subscribe((data) => {
       this.authenticationService.isUserLoggedIn();
       this.authenticationService.getUser();
       this.authenticationService.getRoles();
+      location.replace('');
     });
   }
+
 }
