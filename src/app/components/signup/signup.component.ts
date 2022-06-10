@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
                 email: ['', [Validators.required, Validators.email]],
                 phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9_-]{8,8}$')]],
                 address: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(55)]],
-                role_id: [{role_id: ''}, [Validators.required]],
+                role_id: ['', [Validators.required]],
                 password: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(27)]],
                 confirmPassword: ['']
             },
