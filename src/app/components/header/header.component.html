@@ -9,7 +9,7 @@
                 <li><a routerLink="" class="nav-link px-2 link-secondary">Home</a></li>
                 <li><a routerLink="" class="nav-link px-2 link-dark">Inventory</a></li>
                 <li><a routerLink="" class="nav-link px-2 link-dark">Customers</a></li>
-                <li><a routerLink="" class="nav-link px-2 link-dark">Products</a></li>
+                <li><a routerLink="announcements" class="nav-link px-2 link-dark">Products</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -31,6 +31,7 @@
                     <li><a class="dropdown-item" type="button" (click)="logout()">Sign out</a></li>
                 </ul>
             </div>
+            <div *ngIf="isUserLogged" class="mx-5">{{user}}</div>
         </div>
     </div>
 </header>

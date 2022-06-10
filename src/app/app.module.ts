@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import {AuthInterceptor} from './auth.interceptor';
 import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AnnouncementsComponent } from './components/announcements/announcements.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     HomeComponent,
     SignupComponent,
-    FooterComponent
+    FooterComponent,
+    AnnouncementsComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
