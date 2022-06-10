@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center form_container">
-                <form [formGroup]="signupForm">
+                <form [formGroup]="editForm">
                     <div class="d-flex justify-content-between">
                         <div class="input-group">
                             <div class="input-group-append">
@@ -26,23 +26,23 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="help-block"
-                              *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)"
+                              *ngIf="editForm.controls['firstName'].invalid && (editForm.controls['firstName'].touched || editForm.controls['firstName'].dirty)"
                               style="color:red;">
-                        <span *ngIf="signupForm.controls['firstName'].errors.required">
+                        <span *ngIf="editForm.controls['firstName'].errors.required">
                                     Please enter your first name</span>
-                                <span class="error" *ngIf="signupForm.controls['firstName'].errors.minlength">Your
+                                <span class="error" *ngIf="editForm.controls['firstName'].errors.editForm">Your
                                     first name must have at least 3 chars</span>
-                                <span class="error" *ngIf="signupForm.controls['firstName'].errors.maxlength">Your
+                                <span class="error" *ngIf="editForm.controls['firstName'].errors.maxlength">Your
                                     first name must have at most 17 chars</span>
                     </span>
                         <span class="help-block"
-                              *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)"
+                              *ngIf="editForm.controls['lastName'].invalid && (editForm.controls['lastName'].touched || editForm.controls['lastName'].dirty)"
                               style="color:red;">
-                        <div *ngIf="signupForm.controls['lastName'].errors.required">
+                        <div *ngIf="editForm.controls['lastName'].errors.required">
                                     Please enter your last name</div>
-                                <div class="error" *ngIf="signupForm.controls['lastName'].errors.minlength">Your
+                                <div class="error" *ngIf="editForm.controls['lastName'].errors.minlength">Your
                                     last name must have at least 3 chars</div>
-                                <div class="error" *ngIf="signupForm.controls['lastName'].errors.maxlength">Your
+                                <div class="error" *ngIf="editForm.controls['lastName'].errors.maxlength">Your
                                     last name must have at most 17 chars</div>
                     </span>
                     </div>
@@ -63,21 +63,21 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="help-block"
-                              *ngIf="signupForm.controls['pseudo'].invalid && (signupForm.controls['pseudo'].touched || signupForm.controls['pseudo'].dirty)"
+                              *ngIf="editForm.controls['pseudo'].invalid && (editForm.controls['pseudo'].touched || editForm.controls['pseudo'].dirty)"
                               style="color:red;">
-                        <div class="error" *ngIf="signupForm.controls['pseudo'].errors.required">
+                        <div class="error" *ngIf="editForm.controls['pseudo'].errors.required">
                                     Please enter your username</div>
-                                <div class="error" *ngIf="signupForm.controls['pseudo'].errors.minlength">Your
+                                <div class="error" *ngIf="editForm.controls['pseudo'].errors.minlength">Your
                                     username must have at least 3 chars</div>
-                                <div class="error" *ngIf="signupForm.controls['pseudo'].errors.maxlength">Your
+                                <div class="error" *ngIf="editForm.controls['pseudo'].errors.maxlength">Your
                                     username must have at most 17 chars</div>
                     </span>
                         <span class="help-block"
-                              *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)"
+                              *ngIf="editForm.controls['email'].invalid && (editForm.controls['email'].touched || editForm.controls['email'].dirty)"
                               style="color:red;">
-                        <div *ngIf="signupForm.controls['email'].errors.required">Please
+                        <div *ngIf="editForm.controls['email'].errors.required">Please
                                     enter your E-mail</div>
-                                <div class="error" *ngIf="signupForm.controls['email'].errors.email">E-mail
+                                <div class="error" *ngIf="editForm.controls['email'].errors.email">E-mail
                                     invalid</div>
                     </span>
                     </div>
@@ -104,17 +104,17 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="help-block"
-                              *ngIf="signupForm.controls['phoneNumber'].invalid && (signupForm.controls['phoneNumber'].touched || signupForm.controls['phoneNumber'].dirty)"
+                              *ngIf="editForm.controls['phoneNumber'].invalid && (editForm.controls['phoneNumber'].touched || editForm.controls['phoneNumber'].dirty)"
                               style="color:red;">
-                        <div *ngIf="signupForm.controls['phoneNumber'].errors.required">Please
+                        <div *ngIf="editForm.controls['phoneNumber'].errors.required">Please
                                     enter your phone number</div>
-                                <div *ngIf="signupForm.controls['phoneNumber'].errors.pattern">Phone number
+                                <div *ngIf="editForm.controls['phoneNumber'].errors.pattern">Phone number
                                     invalid</div>
                     </span>
                         <span class="help-block"
-                              *ngIf="signupForm.controls['role_id'].invalid && (signupForm.controls['role_id'].touched || signupForm.controls['role_id'].dirty)"
+                              *ngIf="editForm.controls['role_id'].invalid && (editForm.controls['role_id'].touched || editForm.controls['role_id'].dirty)"
                               style="color:red;">
-                        <div class="error" *ngIf="signupForm.controls['role_id'].errors.required">
+                        <div class="error" *ngIf="editForm.controls['role_id'].errors.required">
                                     Please enter your role</div>
                     </span>
                     </div>
@@ -126,13 +126,13 @@
                                   required></textarea>
                     </div>
                     <span class="help-block"
-                          *ngIf="signupForm.controls['address'].invalid && (signupForm.controls['address'].touched || signupForm.controls['address'].dirty)"
+                          *ngIf="editForm.controls['address'].invalid && (editForm.controls['address'].touched || editForm.controls['address'].dirty)"
                           style="color:red;">
-                        <div class="error" *ngIf="signupForm.controls['address'].errors.required">
+                        <div class="error" *ngIf="editForm.controls['address'].errors.required">
                                     Please enter your address</div>
-                                <div class="error" *ngIf="signupForm.controls['address'].errors.minlength">Your
+                                <div class="error" *ngIf="editForm.controls['address'].errors.minlength">Your
                                     address must have at least 7 chars</div>
-                                <div class="error" *ngIf="signupForm.controls['address'].errors.maxlength">Your
+                                <div class="error" *ngIf="editForm.controls['address'].errors.maxlength">Your
                                     address must have at most 55 chars</div>
                     </span>
                     <div class="d-flex">
@@ -153,24 +153,24 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="help-block"
-                              *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].touched || signupForm.controls['password'].dirty)"
+                              *ngIf="editForm.controls['password'].invalid && (editForm.controls['password'].touched || editForm.controls['password'].dirty)"
                               style="color:red;">
-                        <div class="error" *ngIf="signupForm.controls['password'].errors.required">
+                        <div class="error" *ngIf="editForm.controls['password'].errors.required">
                                     Please enter your password</div>
-                                <div class="error" *ngIf="signupForm.controls['password'].errors.minlength">Your
+                                <div class="error" *ngIf="editForm.controls['password'].errors.minlength">Your
                                     password must have at least 7 chars</div>
-                                <div class="error" *ngIf="signupForm.controls['password'].errors.maxlength">Your
+                                <div class="error" *ngIf="editForm.controls['password'].errors.maxlength">Your
                                     password must have at most 27 chars</div>
                     </span>
                         <span class="help-block"
-                              *ngIf="signupForm.controls['confirmPassword'].invalid && (signupForm.controls['confirmPassword'].touched || signupForm.controls['confirmPassword'].dirty)"
+                              *ngIf="editForm.controls['confirmPassword'].invalid && (editForm.controls['confirmPassword'].touched || editForm.controls['confirmPassword'].dirty)"
                               style="color:red;">
-                        <div *ngIf="signupForm.controls['confirmPassword'].errors.mustMatch">
+                        <div *ngIf="editForm.controls['confirmPassword'].errors.mustMatch">
                                     Password & confirm password doesn't match</div>
                     </span>
                     </div>
                     <div class="d-flex justify-content-center mt-3 login_container">
-                        <button (click)="signup()" [disabled]="signupForm.invalid || showLoading" type="submit"
+                        <button (click)="saveEditUser()" [disabled]="editForm.invalid || showLoading" type="submit"
                                 name="button" class="btn login_btn">
                             <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;&nbsp;
                             <span *ngIf="showLoading">Loading...</span>
